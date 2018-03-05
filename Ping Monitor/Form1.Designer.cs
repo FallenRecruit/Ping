@@ -226,6 +226,7 @@
             // averageTimer
             // 
             this.averageTimer.Enabled = true;
+            this.averageTimer.Interval = 200;
             this.averageTimer.Tick += new System.EventHandler(this.averageTimer_Tick);
             // 
             // label8

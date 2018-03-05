@@ -54,7 +54,7 @@ namespace Ping_Monitor
                 }
                 else { ping88Lab.Invoke((MethodInvoker)(() => ping88Lab.Text = reply.RoundtripTime.ToString())); }
 
-                Thread.Sleep(100);
+                Thread.Sleep(200);
             }
         }
         private void Ping44()
@@ -70,7 +70,7 @@ namespace Ping_Monitor
                 }
                 else { ping44Lab.Invoke((MethodInvoker)(() => ping44Lab.Text = reply.RoundtripTime.ToString())); }
 
-                Thread.Sleep(100);
+                Thread.Sleep(200);
             }
         }
         private void PingLauntel()
@@ -90,7 +90,7 @@ namespace Ping_Monitor
                 }
                 else { pingLauntelLab.Invoke((MethodInvoker)(() => pingLauntelLab.Text = reply.RoundtripTime.ToString())); }
 
-                Thread.Sleep(100);
+                Thread.Sleep(200);
             }
         }
         private void PingMirror()
