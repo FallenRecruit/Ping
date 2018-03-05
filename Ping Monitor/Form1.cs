@@ -23,6 +23,7 @@ namespace Ping_Monitor
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Location = Properties.Settings.Default.Location;
             //https://youtu.be/8mjqXiggWNc?t=529
             Thread pingThread0 = new Thread(Ping88);
             pingThread0.IsBackground = true;
@@ -173,6 +174,12 @@ namespace Ping_Monitor
             else if (average < 100) { avLab.ForeColor = Color.Orange; }
             else if (average < 250) { avLab.ForeColor = Color.Red;    }
             avLab.Text = average.ToString();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.Location = Location;
+            Properties.Settings.Default.Save();
         }
     }
 }
