@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Net.NetworkInformation;
 using System.Net;
 using System.Net.Sockets;
+using System.Diagnostics;
 
 namespace Ping_Monitor
 {
@@ -19,12 +20,13 @@ namespace Ping_Monitor
         public Form1()
         {
             InitializeComponent();
+
+            WebClient webClient;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             Location = Properties.Settings.Default.Location;
-            //https://youtu.be/8mjqXiggWNc?t=529
             Thread pingThread0 = new Thread(Ping88);
             pingThread0.IsBackground = true;
             pingThread0.Start();
@@ -37,7 +39,15 @@ namespace Ping_Monitor
             Thread pingThread3 = new Thread(PingMirror);
             pingThread3.IsBackground = true;
             pingThread3.Start();
-
+            Thread pingThread4 = new Thread(PingJupiter);
+            pingThread4.IsBackground = true;
+            pingThread4.Start();
+            Thread pingThread5 = new Thread(PingSaturn);
+            pingThread5.IsBackground = true;
+            pingThread5.Start();
+            Thread pingThread6 = new Thread(PingMurcury);
+            pingThread6.IsBackground = true;
+            pingThread6.Start();
         }
 
         private void Ping88()
@@ -109,13 +119,72 @@ namespace Ping_Monitor
                     tOutMi.Invoke((MethodInvoker)(() => tOutMi.Text = (Convert.ToInt16(tOutMi.Text) + 1).ToString()));
                 }
                 else { pingMirrorLab.Invoke((MethodInvoker)(() => pingMirrorLab.Text = reply.RoundtripTime.ToString())); }
-  
+
+                Thread.Sleep(1000);
+            }
+        }
+        private void PingJupiter()
+        {
+            string host = "jupiter.launtel.net.au";
+            IPAddress ip = null;
+            GetResolvedConnecionIPAddress(host, out ip);
+            host = ip.ToString();
+
+            Ping pinger = new Ping();
+            while (true)
+            {
+                PingReply reply = pinger.Send(host);
+                if (reply.RoundtripTime == 0)
+                {
+                    tOutJu.Invoke((MethodInvoker)(() => tOutJu.Text = (Convert.ToInt16(tOutJu.Text) + 1).ToString()));
+                }
+                else { pingJupiterLab.Invoke((MethodInvoker)(() => pingJupiterLab.Text = reply.RoundtripTime.ToString())); }
+
+                Thread.Sleep(1000);
+            }
+        }
+        private void PingSaturn()
+        {
+            string host = "saturn.launtel.net.au";
+            IPAddress ip = null;
+            GetResolvedConnecionIPAddress(host, out ip);
+            host = ip.ToString();
+
+            Ping pinger = new Ping();
+            while (true)
+            {
+                PingReply reply = pinger.Send(host);
+                if (reply.RoundtripTime == 0)
+                {
+                    tOutSa.Invoke((MethodInvoker)(() => tOutSa.Text = (Convert.ToInt16(tOutSa.Text) + 1).ToString()));
+                }
+                else { pingSaturnLab.Invoke((MethodInvoker)(() => pingSaturnLab.Text = reply.RoundtripTime.ToString())); }
+
+                Thread.Sleep(1000);
+            }
+        }
+        private void PingMurcury()
+        {
+            string host = "mercury.launtel.net.au";
+            IPAddress ip = null;
+            GetResolvedConnecionIPAddress(host, out ip);
+            host = ip.ToString();
+
+            Ping pinger = new Ping();
+            while (true)
+            {
+                PingReply reply = pinger.Send(host);
+                if (reply.RoundtripTime == 0)
+                {
+                    tOutMe.Invoke((MethodInvoker)(() => tOutMe.Text = (Convert.ToInt16(tOutMe.Text) + 1).ToString()));
+                }
+                else { pingMercuryLab.Invoke((MethodInvoker)(() => pingMercuryLab.Text = reply.RoundtripTime.ToString())); }
+
                 Thread.Sleep(1000);
             }
         }
 
-        public static bool GetResolvedConnecionIPAddress(string serverNameOrURL,
-                   out IPAddress resolvedIPAddress)
+        public static bool GetResolvedConnecionIPAddress(string serverNameOrURL, out IPAddress resolvedIPAddress)
         {
             bool isResolved = false;
             IPHostEntry hostEntry = null;
@@ -174,7 +243,14 @@ namespace Ping_Monitor
             else if (average < 100) { avLab.ForeColor = Color.Orange; }
             else if (average < 250) { avLab.ForeColor = Color.Red;    }
             avLab.Text = average.ToString();
+
+            average = (Convert.ToInt16(pingMirrorLab.Text) + Convert.ToInt16(pingJupiterLab.Text) + Convert.ToInt16(pingSaturnLab.Text) + Convert.ToInt16(pingMercuryLab.Text)) / 4;
+            if (average < 75) { avLab2.ForeColor = Color.Lime; }
+            else if (average < 100) { avLab2.ForeColor = Color.Orange; }
+            else if (average < 250) { avLab2.ForeColor = Color.Red; }
+            avLab2.Text = average.ToString();
         }
+
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {

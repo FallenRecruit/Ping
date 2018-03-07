@@ -48,6 +48,16 @@
             this.averageTimer = new System.Windows.Forms.Timer(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.avLab = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pingJupiterLab = new System.Windows.Forms.Label();
+            this.tOutJu = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pingSaturnLab = new System.Windows.Forms.Label();
+            this.tOutSa = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pingMercuryLab = new System.Windows.Forms.Label();
+            this.tOutMe = new System.Windows.Forms.Label();
+            this.avLab2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -88,7 +98,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Lime;
-            this.label4.Location = new System.Drawing.Point(12, 61);
+            this.label4.Location = new System.Drawing.Point(12, 69);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 11);
             this.label4.TabIndex = 3;
@@ -134,7 +144,7 @@
             this.pingMirrorLab.AutoSize = true;
             this.pingMirrorLab.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pingMirrorLab.ForeColor = System.Drawing.Color.Lime;
-            this.pingMirrorLab.Location = new System.Drawing.Point(121, 62);
+            this.pingMirrorLab.Location = new System.Drawing.Point(121, 70);
             this.pingMirrorLab.Name = "pingMirrorLab";
             this.pingMirrorLab.Size = new System.Drawing.Size(12, 11);
             this.pingMirrorLab.TabIndex = 8;
@@ -146,7 +156,7 @@
             this.tOutMi.AutoSize = true;
             this.tOutMi.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tOutMi.ForeColor = System.Drawing.Color.Lime;
-            this.tOutMi.Location = new System.Drawing.Point(166, 61);
+            this.tOutMi.Location = new System.Drawing.Point(166, 69);
             this.tOutMi.Name = "tOutMi";
             this.tOutMi.Size = new System.Drawing.Size(12, 11);
             this.tOutMi.TabIndex = 9;
@@ -252,12 +262,130 @@
             this.avLab.Text = "0";
             this.avLab.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Lime;
+            this.label9.Location = new System.Drawing.Point(12, 80);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(110, 11);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "jupiter.launtel";
+            // 
+            // pingJupiterLab
+            // 
+            this.pingJupiterLab.AutoSize = true;
+            this.pingJupiterLab.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pingJupiterLab.ForeColor = System.Drawing.Color.Lime;
+            this.pingJupiterLab.Location = new System.Drawing.Point(121, 81);
+            this.pingJupiterLab.Name = "pingJupiterLab";
+            this.pingJupiterLab.Size = new System.Drawing.Size(12, 11);
+            this.pingJupiterLab.TabIndex = 8;
+            this.pingJupiterLab.Text = "0";
+            this.pingJupiterLab.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tOutJu
+            // 
+            this.tOutJu.AutoSize = true;
+            this.tOutJu.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tOutJu.ForeColor = System.Drawing.Color.Lime;
+            this.tOutJu.Location = new System.Drawing.Point(166, 80);
+            this.tOutJu.Name = "tOutJu";
+            this.tOutJu.Size = new System.Drawing.Size(12, 11);
+            this.tOutJu.TabIndex = 9;
+            this.tOutJu.Text = "0";
+            this.tOutJu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Lime;
+            this.label12.Location = new System.Drawing.Point(12, 91);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(103, 11);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "saturn.launtel";
+            // 
+            // pingSaturnLab
+            // 
+            this.pingSaturnLab.AutoSize = true;
+            this.pingSaturnLab.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pingSaturnLab.ForeColor = System.Drawing.Color.Lime;
+            this.pingSaturnLab.Location = new System.Drawing.Point(121, 92);
+            this.pingSaturnLab.Name = "pingSaturnLab";
+            this.pingSaturnLab.Size = new System.Drawing.Size(12, 11);
+            this.pingSaturnLab.TabIndex = 8;
+            this.pingSaturnLab.Text = "0";
+            this.pingSaturnLab.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tOutSa
+            // 
+            this.tOutSa.AutoSize = true;
+            this.tOutSa.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tOutSa.ForeColor = System.Drawing.Color.Lime;
+            this.tOutSa.Location = new System.Drawing.Point(166, 91);
+            this.tOutSa.Name = "tOutSa";
+            this.tOutSa.Size = new System.Drawing.Size(12, 11);
+            this.tOutSa.TabIndex = 9;
+            this.tOutSa.Text = "0";
+            this.tOutSa.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Lime;
+            this.label15.Location = new System.Drawing.Point(12, 102);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(110, 11);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "mercury.launtel";
+            // 
+            // pingMercuryLab
+            // 
+            this.pingMercuryLab.AutoSize = true;
+            this.pingMercuryLab.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pingMercuryLab.ForeColor = System.Drawing.Color.Lime;
+            this.pingMercuryLab.Location = new System.Drawing.Point(121, 103);
+            this.pingMercuryLab.Name = "pingMercuryLab";
+            this.pingMercuryLab.Size = new System.Drawing.Size(12, 11);
+            this.pingMercuryLab.TabIndex = 8;
+            this.pingMercuryLab.Text = "0";
+            this.pingMercuryLab.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tOutMe
+            // 
+            this.tOutMe.AutoSize = true;
+            this.tOutMe.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tOutMe.ForeColor = System.Drawing.Color.Lime;
+            this.tOutMe.Location = new System.Drawing.Point(166, 102);
+            this.tOutMe.Name = "tOutMe";
+            this.tOutMe.Size = new System.Drawing.Size(12, 11);
+            this.tOutMe.TabIndex = 9;
+            this.tOutMe.Text = "0";
+            this.tOutMe.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // avLab2
+            // 
+            this.avLab2.AutoSize = true;
+            this.avLab2.Font = new System.Drawing.Font("Lucida Console", 12F);
+            this.avLab2.ForeColor = System.Drawing.Color.Lime;
+            this.avLab2.Location = new System.Drawing.Point(249, 81);
+            this.avLab2.Name = "avLab2";
+            this.avLab2.Size = new System.Drawing.Size(18, 16);
+            this.avLab2.TabIndex = 17;
+            this.avLab2.Text = "0";
+            this.avLab2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(313, 84);
+            this.ClientSize = new System.Drawing.Size(313, 123);
+            this.Controls.Add(this.avLab2);
             this.Controls.Add(this.avLab);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -266,11 +394,20 @@
             this.Controls.Add(this.tOutLt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ping88Lab);
+            this.Controls.Add(this.tOutMe);
+            this.Controls.Add(this.tOutSa);
+            this.Controls.Add(this.tOutJu);
             this.Controls.Add(this.tOutMi);
+            this.Controls.Add(this.pingMercuryLab);
+            this.Controls.Add(this.pingSaturnLab);
+            this.Controls.Add(this.pingJupiterLab);
             this.Controls.Add(this.pingMirrorLab);
             this.Controls.Add(this.pingLauntelLab);
             this.Controls.Add(this.ping44Lab);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -305,6 +442,16 @@
         private System.Windows.Forms.Timer averageTimer;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label avLab;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label pingJupiterLab;
+        private System.Windows.Forms.Label tOutJu;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label pingSaturnLab;
+        private System.Windows.Forms.Label tOutSa;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label pingMercuryLab;
+        private System.Windows.Forms.Label tOutMe;
+        private System.Windows.Forms.Label avLab2;
     }
 }
 
