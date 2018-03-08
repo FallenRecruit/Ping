@@ -58,6 +58,9 @@
             this.pingMercuryLab = new System.Windows.Forms.Label();
             this.tOutMe = new System.Windows.Forms.Label();
             this.avLab2 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.jitLab1 = new System.Windows.Forms.Label();
+            this.jitLab2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -236,7 +239,6 @@
             // averageTimer
             // 
             this.averageTimer.Enabled = true;
-            this.averageTimer.Interval = 200;
             this.averageTimer.Tick += new System.EventHandler(this.averageTimer_Tick);
             // 
             // label8
@@ -244,7 +246,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Lucida Console", 12F);
             this.label8.ForeColor = System.Drawing.Color.Lime;
-            this.label8.Location = new System.Drawing.Point(225, 15);
+            this.label8.Location = new System.Drawing.Point(216, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 16);
             this.label8.TabIndex = 16;
@@ -255,7 +257,7 @@
             this.avLab.AutoSize = true;
             this.avLab.Font = new System.Drawing.Font("Lucida Console", 12F);
             this.avLab.ForeColor = System.Drawing.Color.Lime;
-            this.avLab.Location = new System.Drawing.Point(249, 35);
+            this.avLab.Location = new System.Drawing.Point(240, 29);
             this.avLab.Name = "avLab";
             this.avLab.Size = new System.Drawing.Size(18, 16);
             this.avLab.TabIndex = 17;
@@ -372,21 +374,59 @@
             this.avLab2.AutoSize = true;
             this.avLab2.Font = new System.Drawing.Font("Lucida Console", 12F);
             this.avLab2.ForeColor = System.Drawing.Color.Lime;
-            this.avLab2.Location = new System.Drawing.Point(249, 81);
+            this.avLab2.Location = new System.Drawing.Point(240, 75);
             this.avLab2.Name = "avLab2";
             this.avLab2.Size = new System.Drawing.Size(18, 16);
             this.avLab2.TabIndex = 17;
             this.avLab2.Text = "0";
             this.avLab2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Lucida Console", 12F);
+            this.label10.ForeColor = System.Drawing.Color.Lime;
+            this.label10.Location = new System.Drawing.Point(295, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 16);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "Jitter";
+            // 
+            // jitLab1
+            // 
+            this.jitLab1.AutoSize = true;
+            this.jitLab1.Font = new System.Drawing.Font("Lucida Console", 12F);
+            this.jitLab1.ForeColor = System.Drawing.Color.Lime;
+            this.jitLab1.Location = new System.Drawing.Point(307, 31);
+            this.jitLab1.Name = "jitLab1";
+            this.jitLab1.Size = new System.Drawing.Size(18, 16);
+            this.jitLab1.TabIndex = 17;
+            this.jitLab1.Text = "0";
+            this.jitLab1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // jitLab2
+            // 
+            this.jitLab2.AutoSize = true;
+            this.jitLab2.Font = new System.Drawing.Font("Lucida Console", 12F);
+            this.jitLab2.ForeColor = System.Drawing.Color.Lime;
+            this.jitLab2.Location = new System.Drawing.Point(307, 75);
+            this.jitLab2.Name = "jitLab2";
+            this.jitLab2.Size = new System.Drawing.Size(18, 16);
+            this.jitLab2.TabIndex = 17;
+            this.jitLab2.Text = "0";
+            this.jitLab2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(313, 123);
+            this.ClientSize = new System.Drawing.Size(375, 123);
+            this.Controls.Add(this.jitLab2);
             this.Controls.Add(this.avLab2);
+            this.Controls.Add(this.jitLab1);
             this.Controls.Add(this.avLab);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tOut88);
@@ -452,6 +492,9 @@
         private System.Windows.Forms.Label pingMercuryLab;
         private System.Windows.Forms.Label tOutMe;
         private System.Windows.Forms.Label avLab2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label jitLab1;
+        private System.Windows.Forms.Label jitLab2;
     }
 }
 

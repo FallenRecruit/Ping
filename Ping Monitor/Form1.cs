@@ -17,11 +17,16 @@ namespace Ping_Monitor
 {
     public partial class Form1 : Form
     {
+        List<int?> pingList1;
+        List<int?> pingList2;
+
         public Form1()
         {
             InitializeComponent();
 
-            WebClient webClient;
+            pingList1 = new List<int?> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+            pingList2 = new List<int?> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -239,7 +244,7 @@ namespace Ping_Monitor
         {
             int average = 0;
             average = (Convert.ToInt16(ping88Lab.Text) + Convert.ToInt16(ping44Lab.Text) + Convert.ToInt16(pingLauntelLab.Text)) / 3;
-            if      (average < 75)  { avLab.ForeColor = Color.Lime;  }
+            if (average < 75)  { avLab.ForeColor = Color.Lime;  }
             else if (average < 100) { avLab.ForeColor = Color.Orange; }
             else if (average < 250) { avLab.ForeColor = Color.Red;    }
             avLab.Text = average.ToString();
@@ -249,6 +254,26 @@ namespace Ping_Monitor
             else if (average < 100) { avLab2.ForeColor = Color.Orange; }
             else if (average < 250) { avLab2.ForeColor = Color.Red; }
             avLab2.Text = average.ToString();
+
+            pingList1.RemoveAt(0); // Remove the item at index 1
+            pingList1.Add(Convert.ToInt32(avLab.Text)); // Add a null to the end of the list
+
+            pingList2.RemoveAt(0); // Remove the item at index 1
+            pingList2.Add(Convert.ToInt32(avLab2.Text)); // Add a null to the end of the list
+
+            int max = 0;
+            int min = 0;
+
+            max = Convert.ToInt32(pingList1.Max());
+            min = Convert.ToInt32(pingList1.Min());
+
+            jitLab1.Text = max - min + "+/-";
+
+            max = Convert.ToInt32(pingList2.Max());
+            min = Convert.ToInt32(pingList2.Min());
+
+            jitLab2.Text = max - min + "+/-";
+
         }
 
 
