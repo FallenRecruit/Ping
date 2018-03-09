@@ -61,6 +61,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.jitLab1 = new System.Windows.Forms.Label();
             this.jitLab2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -416,12 +417,27 @@
             this.jitLab2.Text = "0";
             this.jitLab2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.ForeColor = System.Drawing.Color.Lime;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(219, 95);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Reset TOuts";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(375, 123);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.jitLab2);
             this.Controls.Add(this.avLab2);
             this.Controls.Add(this.jitLab1);
@@ -495,6 +511,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label jitLab1;
         private System.Windows.Forms.Label jitLab2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

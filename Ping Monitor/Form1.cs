@@ -267,12 +267,12 @@ namespace Ping_Monitor
             max = Convert.ToInt32(pingList1.Max());
             min = Convert.ToInt32(pingList1.Min());
 
-            jitLab1.Text = max - min + "+/-";
+            jitLab1.Text = max - min + "±";
 
             max = Convert.ToInt32(pingList2.Max());
             min = Convert.ToInt32(pingList2.Min());
 
-            jitLab2.Text = max - min + "+/-";
+            jitLab2.Text = max - min + "±";
 
         }
 
@@ -281,6 +281,17 @@ namespace Ping_Monitor
         {
             Properties.Settings.Default.Location = Location;
             Properties.Settings.Default.Save();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tOut44.Text = "0";
+            tOut88.Text = "0";
+            tOutLt.Text = "0";
+            tOutMi.Text = "0";
+            tOutJu.Text = "0";
+            tOutSa.Text = "0";
+            tOutMe.Text = "0";
         }
     }
 }
