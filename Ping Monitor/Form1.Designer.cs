@@ -62,6 +62,9 @@
             this.jitLab1 = new System.Windows.Forms.Label();
             this.jitLab2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pingVenusLab = new System.Windows.Forms.Label();
+            this.tOutVe = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -423,7 +426,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.ForeColor = System.Drawing.Color.Lime;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(219, 95);
+            this.button1.Location = new System.Drawing.Point(219, 102);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 18;
@@ -431,12 +434,47 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Lime;
+            this.label11.Location = new System.Drawing.Point(12, 114);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(96, 11);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "venus.launtel";
+            // 
+            // pingVenusLab
+            // 
+            this.pingVenusLab.AutoSize = true;
+            this.pingVenusLab.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pingVenusLab.ForeColor = System.Drawing.Color.Lime;
+            this.pingVenusLab.Location = new System.Drawing.Point(121, 115);
+            this.pingVenusLab.Name = "pingVenusLab";
+            this.pingVenusLab.Size = new System.Drawing.Size(12, 11);
+            this.pingVenusLab.TabIndex = 8;
+            this.pingVenusLab.Text = "0";
+            this.pingVenusLab.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tOutVe
+            // 
+            this.tOutVe.AutoSize = true;
+            this.tOutVe.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tOutVe.ForeColor = System.Drawing.Color.Lime;
+            this.tOutVe.Location = new System.Drawing.Point(166, 114);
+            this.tOutVe.Name = "tOutVe";
+            this.tOutVe.Size = new System.Drawing.Size(12, 11);
+            this.tOutVe.TabIndex = 9;
+            this.tOutVe.Text = "0";
+            this.tOutVe.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(375, 123);
+            this.ClientSize = new System.Drawing.Size(375, 133);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.jitLab2);
             this.Controls.Add(this.avLab2);
@@ -450,10 +488,12 @@
             this.Controls.Add(this.tOutLt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ping88Lab);
+            this.Controls.Add(this.tOutVe);
             this.Controls.Add(this.tOutMe);
             this.Controls.Add(this.tOutSa);
             this.Controls.Add(this.tOutJu);
             this.Controls.Add(this.tOutMi);
+            this.Controls.Add(this.pingVenusLab);
             this.Controls.Add(this.pingMercuryLab);
             this.Controls.Add(this.pingSaturnLab);
             this.Controls.Add(this.pingJupiterLab);
@@ -461,6 +501,7 @@
             this.Controls.Add(this.pingLauntelLab);
             this.Controls.Add(this.ping44Lab);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label9);
@@ -512,6 +553,9 @@
         private System.Windows.Forms.Label jitLab1;
         private System.Windows.Forms.Label jitLab2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label pingVenusLab;
+        private System.Windows.Forms.Label tOutVe;
     }
 }
 

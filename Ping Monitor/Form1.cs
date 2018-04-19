@@ -53,6 +53,9 @@ namespace Ping_Monitor
             Thread pingThread6 = new Thread(PingMurcury);
             pingThread6.IsBackground = true;
             pingThread6.Start();
+            Thread pingThread7 = new Thread(PingVenus);
+            pingThread7.IsBackground = true;
+            pingThread7.Start();
         }
 
         private void Ping88()
@@ -65,7 +68,7 @@ namespace Ping_Monitor
                 PingReply reply = pinger.Send(host);
                 if (reply.RoundtripTime == 0)
                 {
-                    tOut88.Invoke((MethodInvoker)(() => tOut88.Text = (Convert.ToInt16(tOutMi.Text) + 1).ToString()));
+                    tOut88.Invoke((MethodInvoker)(() => tOut88.Text = (Convert.ToInt16(tOut88.Text) + 1).ToString()));
                 }
                 else { ping88Lab.Invoke((MethodInvoker)(() => ping88Lab.Text = reply.RoundtripTime.ToString())); }
 
@@ -81,7 +84,7 @@ namespace Ping_Monitor
                 PingReply reply = pinger.Send(host);
                 if (reply.RoundtripTime == 0)
                 {
-                    tOut44.Invoke((MethodInvoker)(() => tOut44.Text = (Convert.ToInt16(tOutMi.Text) + 1).ToString()));
+                    tOut44.Invoke((MethodInvoker)(() => tOut44.Text = (Convert.ToInt16(tOut44.Text) + 1).ToString()));
                 }
                 else { ping44Lab.Invoke((MethodInvoker)(() => ping44Lab.Text = reply.RoundtripTime.ToString())); }
 
@@ -101,7 +104,7 @@ namespace Ping_Monitor
                 PingReply reply = pinger.Send(host);
                 if (reply.RoundtripTime == 0)
                 {
-                    tOutLt.Invoke((MethodInvoker)(() => tOutLt.Text = (Convert.ToInt16(tOutMi.Text) + 1).ToString()));
+                    tOutLt.Invoke((MethodInvoker)(() => tOutLt.Text = (Convert.ToInt16(tOutLt.Text) + 1).ToString()));
                 }
                 else { pingLauntelLab.Invoke((MethodInvoker)(() => pingLauntelLab.Text = reply.RoundtripTime.ToString())); }
 
@@ -188,6 +191,26 @@ namespace Ping_Monitor
                 Thread.Sleep(200);
             }
         }
+        private void PingVenus()
+        {
+            string host = "venus.launtel.net.au";
+            IPAddress ip = null;
+            GetResolvedConnecionIPAddress(host, out ip);
+            host = ip.ToString();
+
+            Ping pinger = new Ping();
+            while (true)
+            {
+                PingReply reply = pinger.Send(host);
+                if (reply.RoundtripTime == 0)
+                {
+                    tOutVe.Invoke((MethodInvoker)(() => tOutVe.Text = (Convert.ToInt16(tOutVe.Text) + 1).ToString()));
+                }
+                else { pingVenusLab.Invoke((MethodInvoker)(() => pingVenusLab.Text = reply.RoundtripTime.ToString())); }
+
+                Thread.Sleep(200);
+            }
+        }
 
         public static bool GetResolvedConnecionIPAddress(string serverNameOrURL, out IPAddress resolvedIPAddress)
         {
@@ -249,7 +272,7 @@ namespace Ping_Monitor
             else if (average < 250) { avLab.ForeColor = Color.Red;    }
             avLab.Text = average.ToString();
 
-            average = (Convert.ToInt16(pingMirrorLab.Text) + Convert.ToInt16(pingJupiterLab.Text) + Convert.ToInt16(pingSaturnLab.Text) + Convert.ToInt16(pingMercuryLab.Text)) / 4;
+            average = (Convert.ToInt16(pingMirrorLab.Text) + Convert.ToInt16(pingJupiterLab.Text) + Convert.ToInt16(pingSaturnLab.Text) + Convert.ToInt16(pingMercuryLab.Text) + Convert.ToInt16(pingVenusLab.Text)) / 5;
             if (average < 75) { avLab2.ForeColor = Color.Lime; }
             else if (average < 100) { avLab2.ForeColor = Color.Orange; }
             else if (average < 250) { avLab2.ForeColor = Color.Red; }
@@ -292,6 +315,7 @@ namespace Ping_Monitor
             tOutJu.Text = "0";
             tOutSa.Text = "0";
             tOutMe.Text = "0";
+            tOutVe.Text = "0";
         }
     }
 }
